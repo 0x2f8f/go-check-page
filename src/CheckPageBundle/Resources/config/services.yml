@@ -1,0 +1,10 @@
+services:
+    mail.service:
+        class: CheckPageBundle\Service\MailService
+        arguments:
+            - "@swiftmailer.mailer"
+            - "%mailer_from%"
+            - "%email_support%"
+            - "%email_devel%"
+    check.page.service:
+        class: CheckPageBundle\Service\CheckPageService

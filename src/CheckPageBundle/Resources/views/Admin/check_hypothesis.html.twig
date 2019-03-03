@@ -1,0 +1,18 @@
+{% extends 'SonataAdminBundle::checkpage_layout.html.twig' %}
+
+{% block breadcrumb %}
+    <li><a href="{{ url('sonata_admin_dashboard') }}">{% trans %}Dashboard{% endtrans %}</a></li>
+    <li class="active">Проверка гипотезы</li>
+{% endblock %}
+
+{% block content %}
+    <h1>Проверка гипотезы</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    {% if result is defined and result %}
+        <h2>Результат:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+{% endblock %}

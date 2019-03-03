@@ -1,0 +1,6 @@
+{% if object.hashmust != object.hashlast %}
+    <a href="{{ admin.generateObjectUrl('updatehash', object) }}" class="btn btn-sm btn-default" title="Страница изменилась. Сохранить изменения?" style="color:red">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        Страница изменилась. Сохранить изменения?
+    </a>
+{% endif %}

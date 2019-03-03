@@ -1,0 +1,10 @@
+{% extends "SonataAdminBundle::standard_layout.html.twig" %}
+
+{% block side_bar_after_nav %}
+    <ul class="active treeview-menu menu_level_1 menu-open" style="display: block;">
+
+        <li class=""><a href="{{ path('check-hypothesis') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Проверка гипотезы</a>
+        </li>
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+services:
+    check_page.admin.page:
+        class: CheckPageBundle\Admin\PageAdmin
+        arguments: [~, CheckPageBundle\Entity\Page, CheckPageBundle:PageAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: check_page.main, label: Страницы для проверки }
+
+    check_page.admin.type:
+        class: CheckPageBundle\Admin\TypeAdmin
+        arguments: [~, CheckPageBundle\Entity\Type, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: check_page.main, label: Группы }

@@ -1,0 +1,23 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: check_page
+    database_user: root
+    database_password: ~
+    mailer_host: smtp.yandex.ru
+    mailer_user: ''
+    mailer_password: ''
+    mailer_port: 465
+    mailer_from: ''
+    mailer_user_title: CheckPage
+    mailer_encryption: ssl
+    mailer_transport: smtp
+    # A secret key that's used to generate certain security-related tokens
+    secret: ThisTokenIsNotSoSecretChangeIt
+    email_support: ''
+    email_devel: ''
+    domain: ''
+    fos_user.user_class: 'CheckPageBundle\Entity\User'

@@ -1,0 +1,18 @@
+sonata_admin:
+    title:      Check page
+    title_logo: favicon.ico
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: left, type: sonata.admin.block.admin_list }
+        groups:
+            check_page.main:
+                label: Main
+                icon: '<i class="fa fa-cog"></i>'
+
+sonata_block:
+    default_contexts: [check_page]
+    blocks:
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts: [check_page]

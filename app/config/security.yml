@@ -1,0 +1,42 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        chainprov:
+            chain:
+                providers: [fos_userbundle]
+        fos_userbundle:
+            id: fos_user.user_provider.username
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: adminpassword
+                        roles: 'ROLE_ADMIN'
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/
+            form_login:
+                provider: chainprov
+                csrf_token_generator: security.csrf.token_manager
+                # if you are using Symfony < 2.8, use the following config instead:
+                # csrf_provider: form.csrf_provider
+
+            logout:       true
+            anonymous:    true
+
+    access_control:
+        - { path: ^/login$,         role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /.*,              role: ROLE_ADMIN }
+        - { path: ^/efconnect,      role: ROLE_ADMIN }
+        - { path: ^/elfinder,       role: ROLE_ADMIN }

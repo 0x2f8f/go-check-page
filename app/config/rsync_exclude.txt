@@ -1,0 +1,10 @@
+composer.json
+composer.lock
+.git
+.gitignore
+package.json
+/var
+/app/config/parameters.yml
+/web/media
+/web/uploads
+/web/dictionaries
